@@ -1,0 +1,5 @@
+# Nuxt dev/build outputs
+dist
+.nuxt
+.output
+.wrangler

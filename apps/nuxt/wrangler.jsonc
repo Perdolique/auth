@@ -1,0 +1,44 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "compatibility_date": "2025-07-25",
+  "main": ".output/server/index.mjs",
+
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".output/public",
+  },
+
+  "compatibility_flags": [
+    "nodejs_compat",
+    "no_nodejs_compat_v2"
+  ],
+
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+
+  "placement": {
+    "mode": "smart"
+  },
+
+  "env": {
+    "staging": {
+      "name": "starter-nuxt-staging",
+
+      "kv_namespaces": [{
+        "binding": "KV",
+        "id": "77c7462efdbf4fbca3c14b76aa769968"
+      }]
+    },
+
+    "production": {
+      "name": "starter-nuxt-production",
+
+      "kv_namespaces": [{
+        "binding": "KV",
+        "id": "3abf0eeb65f24339b6a9065d96a5fc99"
+      }]
+    }
+  }
+}

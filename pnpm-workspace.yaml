@@ -1,0 +1,18 @@
+packages:
+  - apps/nuxt
+  - common/database
+  - common/utils
+  - common/validation
+  - workers/*
+
+catalog:
+  drizzle-orm: 0.44.5
+  typescript: 5.9.3
+  valibot: 1.1.0
+  wrangler: 4.40.3
+
+cleanupUnusedCatalogs: true
+
+nodeLinker: hoisted
+
+saveExact: true
