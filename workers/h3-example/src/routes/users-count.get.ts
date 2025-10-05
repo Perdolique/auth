@@ -1,5 +1,5 @@
 import { createDatabase } from '@/utils/database'
-import { tables } from '@starter/database/connection'
+import { tables } from '@auth/database/connection'
 import { defineEventHandler } from 'h3'
 
 export default defineEventHandler(async (event) => {

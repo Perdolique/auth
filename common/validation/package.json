@@ -1,5 +1,5 @@
 {
-  "name": "@starter/validation",
+  "name": "@auth/validation",
   "version": "1.0.0",
   "description": "Validation schemas and utilities",
   "type": "module",

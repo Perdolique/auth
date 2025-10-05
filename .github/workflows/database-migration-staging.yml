@@ -21,12 +21,12 @@ jobs:
         with:
           node-version-file: .node-version
       - name: Install dependencies
-        run: pnpm --filter @starter/database install
+        run: pnpm --filter @auth/database install
       - name: Run database migration
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: pnpm --filter @starter/database run db:migrate
+        run: pnpm --filter @auth/database run db:migrate
       - name: Seed database
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: pnpm --filter @starter/database run db:seed
+        run: pnpm --filter @auth/database run db:seed

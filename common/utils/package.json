@@ -1,5 +1,5 @@
 {
-  "name": "@starter/utils",
+  "name": "@auth/utils",
   "version": "1.0.0",
   "description": "Utility functions and helpers",
   "scripts": {},
@@ -10,6 +10,6 @@
     "./*": "./src/*.ts"
   },
   "devDependencies": {
-    "@types/node": "24.6.1"
+    "@types/node": "24.6.2"
   }
 }

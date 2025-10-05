@@ -1,4 +1,4 @@
-import { createLogger } from '@starter/utils/logger'
+import { createLogger } from '@auth/utils/logger'
 
 const logger = createLogger('h3-example')
 

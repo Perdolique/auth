@@ -1,6 +1,6 @@
 import { object, parse } from 'valibot'
 import { kvStarterStorage, kvTestKeyName } from '#shared/constants'
-import { NonEmptyStringSchema } from '@starter/validation/schemas/strings'
+import { NonEmptyStringSchema } from '@auth/validation/schemas/strings'
 
 const bodySchema = object({
   storedValue: NonEmptyStringSchema

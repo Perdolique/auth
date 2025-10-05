@@ -1,14 +1,14 @@
-# pnpm run --filter @starter/database db:start
-name: starter-database
+# pnpm run --filter @auth/database db:start
+name: local-database
 
 services:
-  postgres-starter:
-    build: .
-    container_name: postgres-starter
+  local-database:
+    image: postgres:18
+    container_name: local-database
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_USER: user
-      POSTGRES_DB: starter
+      POSTGRES_DB: auth
     command: -c max_connections=1000
     restart: unless-stopped
     ports:
@@ -28,25 +28,25 @@ services:
   neon-proxy:
     image: ghcr.io/timowilhelm/local-neon-http-proxy:main
     environment:
-      - PG_CONNECTION_STRING=postgres://user:password@postgres-starter:5432/starter
+      - PG_CONNECTION_STRING=postgres://user:password@local-database:5432/auth
     restart: unless-stopped
     ports:
       - '4444:4444'
     depends_on:
-      postgres-starter:
+      local-database:
         condition: service_healthy
 
   neon-wsproxy:
     image: ghcr.io/neondatabase/wsproxy:latest
     environment:
-      APPEND_PORT: postgres-starter:5432
+      APPEND_PORT: local-database:5432
       ALLOW_ADDR_REGEX: .*
       LOG_TRAFFIC: true
     restart: unless-stopped
     ports:
       - "5433:80"
     depends_on:
-      postgres-starter:
+      local-database:
         condition: service_healthy
 
 volumes:

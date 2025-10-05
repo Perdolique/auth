@@ -1,4 +1,4 @@
-import { createDrizzle, createDrizzleWebsocket, tables } from '@starter/database/connection'
+import { createDrizzle, createDrizzleWebsocket, tables } from '@auth/database/connection'
 
 export { tables }
 

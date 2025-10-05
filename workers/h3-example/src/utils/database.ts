@@ -1,5 +1,5 @@
 import { H3Event, HTTPError } from 'h3'
-import { createDrizzle } from '@starter/database/connection'
+import { createDrizzle } from '@auth/database/connection'
 import { useLogger } from '@/composables/use-logger'
 import { validateEnv } from '@/utils/validation'
 
